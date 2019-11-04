@@ -1,0 +1,3 @@
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.csproj.CoreCompileInputs.cache
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.AssemblyInfoInputs.cache
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.AssemblyInfo.cs

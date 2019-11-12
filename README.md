@@ -2,6 +2,7 @@
 # 蜗牛
 # I.框架概述
  1).NetCore.Snail 是一个前后端分离通用权限系统， 用vs2017+sqlserver2008开发工具。
+ 
  2).后端标准三层结构：基于NETStandard2.0标准类库。Api使用Asp.Net Core webapi,jwt身份认证。
 
 # II.结构概述

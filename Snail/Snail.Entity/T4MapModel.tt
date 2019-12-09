@@ -1,0 +1,155 @@
+﻿<#@ template language="C#" hostspecific="True" debug="false"#>
+<#@include file="$(ProjectDir)\DBHelper\DbEntity.ttinclude"#> 
+<#@ assembly name="System" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Data.DataSetExtensions" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<# var manager = Manager.Create(Host, GenerationEnvironment); #>
+<#
+  //你的当前model的命名空间
+            string ModelNameSpace="Snail.Entity";
+			string copyright="蜗牛科技";
+			string version="V1.0";
+			string author="Allon";
+
+  //你的数据库连接字符串
+           string ConnectStr = "Data Source=192.168.10.212;User ID=sa;Password=chy@123;database=Test";
+            SqlConnection MySqlConnection = new SqlConnection(ConnectStr);
+            //此sql语句找到你指定数据库下的所有表
+            string SelectYourTableNameStr = "SELECT * FROM sys.sysobjects WHERE TYPE='U'";
+            SqlDataAdapter MySqlDataAdapter = new SqlDataAdapter(SelectYourTableNameStr, MySqlConnection);
+            DataSet MyDataSet = new DataSet();
+            MySqlDataAdapter.Fill(MyDataSet, "cacheTable");
+            //得到table表
+            DataTable MyDataTable = MyDataSet.Tables["cacheTable"];
+            int MyDataTableRowsCount = MyDataTable.Rows.Count;
+            for (int i = 0; i < MyDataTableRowsCount; i++)
+            {
+                //表名
+                //MyDataTable.Rows[i]["name"].ToString();
+                //此sql语句找到你当前表下的所有键值，属性，是否为null，长度。
+                string SelectYourKeyStr = "SELECT [col].[COLUMN_NAME] AS keyname,"+
+                                          "    [col].[DATA_TYPE] AS keyproperty,"+
+                                          "    [col].[CHARACTER_OCTET_LENGTH] AS [length],"+
+                                          "    CASE [col].[IS_NULLABLE]"+
+                                          "        WHEN 'YES' THEN"+
+                                          "            1"+
+                                          "        ELSE"+
+                                          "            0"+
+                                          "    END AS isnullable,"+
+                                          "    CASE"+
+                                          "        WHEN [ccu].[CONSTRAINT_NAME] IS NOT NULL THEN"+
+                                          "            1"+
+                                          "        ELSE"+
+                                          "            0"+
+                                          "    END AS IsPrimaryKey,"+
+                                          "    COLUMNPROPERTY(OBJECT_ID('"+ MyDataTable.Rows[i]["name"].ToString() + "'), [col].[COLUMN_NAME], 'IsIdentity') AS IsIdentity"+
+                                          "    FROM [INFORMATION_SCHEMA].[COLUMNS] col"+
+                                          "     LEFT JOIN [INFORMATION_SCHEMA].[CONSTRAINT_COLUMN_USAGE] ccu"+
+                                          "         ON [ccu].[TABLE_NAME] = [col].[TABLE_NAME]"+
+                                          "            AND [ccu].[COLUMN_NAME] = [col].[COLUMN_NAME]"+
+                                          "            AND [ccu].[CONSTRAINT_NAME] LIKE 'PK_%'"+
+                                          " WHERE [col].[TABLE_NAME] = '"+ MyDataTable.Rows[i]["name"].ToString() + "'";
+
+                MySqlDataAdapter = new SqlDataAdapter(SelectYourKeyStr, MySqlConnection);
+                 MyDataSet = new DataSet();
+                MySqlDataAdapter.Fill(MyDataSet, "cacheTable");
+                //得到key表
+                DataTable MyKeyTable = MyDataSet.Tables["cacheTable"];
+                //tt模板输出文件
+                manager.StartNewFile(MyDataTable.Rows[i]["name"].ToString() +".cs");
+#>
+using System;
+//-----------------------------------------------------------------------
+// * Copyright (C) <#= copyright  #>
+// * Version : <#= version #>
+// * Author  : <#= author #>
+// * FileName: <#= MyDataTable.Rows[i]["name"] #>.cs
+// * History : Created by T4 <#= DateTime.Now #>
+// </copyright>
+//-----------------------------------------------------------------------
+namespace <#=ModelNameSpace#>
+{
+	public class <#=MyDataTable.Rows[i]["name"].ToString()#>
+    {
+<#              for (int keyi = 0; keyi < MyKeyTable.Rows.Count; keyi++)
+                {
+                   string keypropertyOutput = string.Empty;
+                    string isKey=string.Empty;
+                        if(MyKeyTable.Rows[keyi]["IsPrimaryKey"].ToString()=="1" && MyKeyTable.Rows[keyi]["IsIdentity"].ToString()=="1"){
+                            isKey=", IsPrimaryKey = true, IsIdentity = true";
+                        }else if(MyKeyTable.Rows[keyi]["IsPrimaryKey"].ToString()=="1"){
+                isKey=", IsPrimaryKey = true";
+                         }
+                    switch (MyKeyTable.Rows[keyi]["keyproperty"].ToString().ToLower())
+                    {
+                        case "smallint":
+                            keypropertyOutput = "short";
+                            break;
+                        case "int":
+                            keypropertyOutput = "int";
+                            break;
+                        case "bigint":
+                            keypropertyOutput = "long";
+                            break;
+                        case "real":
+                            keypropertyOutput = "float";
+                            break;
+                        case "float":
+                            keypropertyOutput = "double";
+                            break;
+                        case "money":
+                            keypropertyOutput = "decimal";
+                            break;
+                        case "datetime":
+                            keypropertyOutput = "DateTime";
+                            break;
+                        case "uniqueidentifier":
+                            keypropertyOutput = "Guid";
+                            break;
+
+                        case "bit":
+                            keypropertyOutput = "bool";
+                            break;
+                        case "tinyint":
+                            keypropertyOutput = "byte";
+                            break;
+                        case "image":
+                            keypropertyOutput = "byte[]";
+                            break;
+                        case "binary":
+                            keypropertyOutput = "byte[]";
+                            break;
+                        default:
+                            keypropertyOutput = "string";
+                                break;
+                    }
+                    //可为null且不是string（就是值类型）可以加?
+                    if (MyKeyTable.Rows[keyi]["isnullable"].ToString()=="1"&& keypropertyOutput!="string")
+                    {
+                        if (keypropertyOutput == "byte[]")
+                        {
+                            keypropertyOutput = "byte?[]";
+                        }
+                        else
+                        {
+                            keypropertyOutput = keypropertyOutput + "?";
+                        }
+                    }
+#>
+       //[SugarColumn(ColumnName="<#=MyKeyTable.Rows[keyi]["keyname"].ToString()#>" <#=isKey#> )]
+       public  <#=keypropertyOutput#>  <#=MyKeyTable.Rows[keyi]["keyname"].ToString()#>  { get; set; }
+<#
+                }
+#>
+    }
+}
+<#              //代码结束
+                manager.EndBlock();
+        MySqlConnection.Close();
+            }
+#>
+<# manager.Process(true); #>

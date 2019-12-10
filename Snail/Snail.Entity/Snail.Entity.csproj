@@ -5,18 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="T4\TextTemplate1.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>TextTemplate1.tt</DependentUpon>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="T4\TextTemplate1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TextTemplate1.cs</LastGenOutput>
-    </None>
+    <PackageReference Include="MySql.Data" Version="6.10.9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,11 +13,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="T4\TextTemplate1.cs">
+    <Compile Update="T4MapModel.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>TextTemplate1.tt</DependentUpon>
+      <DependentUpon>T4MapModel.tt</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="T4MapMode - 复制.tt">
+      <LastGenOutput>T4MapMode.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="T4MapModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MapModel.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

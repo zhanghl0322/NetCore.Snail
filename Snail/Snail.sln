@@ -15,7 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snail.IService", "Snail.ISe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snail.Bussiness", "Snail.Bussiness\Snail.Bussiness.csproj", "{075D0BAA-891C-4747-8C8F-1090A0E0DB20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Common", "Snail.Common\Snail.Common.csproj", "{118E0CC4-005C-4F82-9B98-88A9CAA20EB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snail.Common", "Snail.Common\Snail.Common.csproj", "{118E0CC4-005C-4F82-9B98-88A9CAA20EB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snail.Core", "Snail.Core", "{BDEE1DF8-5108-440E-9CC9-7EAD9A1D89FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Data", "Snail.Data\Snail.Data.csproj", "{AD9EF4F1-82D6-4978-A9AB-02673AFE4B87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Utils", "Snail.Utils\Snail.Utils.csproj", "{508C36FE-3685-4514-AB97-06F5B319FE17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,9 +57,21 @@ Global
 		{118E0CC4-005C-4F82-9B98-88A9CAA20EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{118E0CC4-005C-4F82-9B98-88A9CAA20EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{118E0CC4-005C-4F82-9B98-88A9CAA20EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9EF4F1-82D6-4978-A9AB-02673AFE4B87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9EF4F1-82D6-4978-A9AB-02673AFE4B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9EF4F1-82D6-4978-A9AB-02673AFE4B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9EF4F1-82D6-4978-A9AB-02673AFE4B87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{508C36FE-3685-4514-AB97-06F5B319FE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508C36FE-3685-4514-AB97-06F5B319FE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508C36FE-3685-4514-AB97-06F5B319FE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508C36FE-3685-4514-AB97-06F5B319FE17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD9EF4F1-82D6-4978-A9AB-02673AFE4B87} = {BDEE1DF8-5108-440E-9CC9-7EAD9A1D89FA}
+		{508C36FE-3685-4514-AB97-06F5B319FE17} = {BDEE1DF8-5108-440E-9CC9-7EAD9A1D89FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2240D814-FE2C-475B-A67C-01B2F7EDD2BC}

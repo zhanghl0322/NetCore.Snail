@@ -66,7 +66,7 @@
           "lib/netstandard1.3/log4net.dll": {}
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/Microsoft.CSharp.dll": {}
@@ -1527,6 +1527,20 @@
         "runtime": {
           "bin/placeholder/Snail.Common.dll": {}
         }
+      },
+      "Snail.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Dapper": "1.60.6",
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/Snail.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Snail.Data.dll": {}
+        }
       }
     }
   },
@@ -1589,10 +1603,10 @@
         "log4net.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "EGoBmf3Na2ppbhPePDE9PlX81r1HuOZH5twBrq7couJZiPTjUnD3648balerQJO6EJ8Sj+43+XuRwQ7r+3tE3w==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "LJaYhRX5VxTUuD9WUPGD3GpWTgs89SVfoOPvSEdt66tL3lQvny9sR/ZiC3px1qUV5EFebS44i2CBeiliHVaQ3w==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1605,6 +1619,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -1614,7 +1629,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -5538,13 +5553,19 @@
       "type": "project",
       "path": "../Snail.Common/Snail.Common.csproj",
       "msbuildProject": "../Snail.Common/Snail.Common.csproj"
+    },
+    "Snail.Data/1.0.0": {
+      "type": "project",
+      "path": "../Snail.Data/Snail.Data.csproj",
+      "msbuildProject": "../Snail.Data/Snail.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Dapper >= 1.60.6",
       "NETStandard.Library >= 2.0.3",
-      "Snail.Common >= 1.0.0"
+      "Snail.Common >= 1.0.0",
+      "Snail.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5579,6 +5600,9 @@
           "projectReferences": {
             "D:\\Code 分类\\NetCore\\2019-11-04\\Snail\\Snail.Common\\Snail.Common.csproj": {
               "projectPath": "D:\\Code 分类\\NetCore\\2019-11-04\\Snail\\Snail.Common\\Snail.Common.csproj"
+            },
+            "D:\\Code 分类\\NetCore\\2019-11-04\\Snail\\Snail.Data\\Snail.Data.csproj": {
+              "projectPath": "D:\\Code 分类\\NetCore\\2019-11-04\\Snail\\Snail.Data\\Snail.Data.csproj"
             }
           }
         }

@@ -1,3 +1,14 @@
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\bin\Debug\netcoreapp2.2\Snail.WebApi.deps.json
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\bin\Debug\netcoreapp2.2\Snail.WebApi.runtimeconfig.json
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\bin\Debug\netcoreapp2.2\Snail.WebApi.runtimeconfig.dev.json
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\bin\Debug\netcoreapp2.2\Snail.WebApi.dll
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\bin\Debug\netcoreapp2.2\Snail.WebApi.pdb
 D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.csproj.CoreCompileInputs.cache
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.RazorAssemblyInfo.cache
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.RazorAssemblyInfo.cs
 D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.AssemblyInfoInputs.cache
 D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.AssemblyInfo.cs
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.RazorTargetAssemblyInfo.cache
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.dll
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.pdb
+D:\Code 分类\NetCore\2019-11-04\Snail\Snail.WebApi\obj\Debug\netcoreapp2.2\Snail.WebApi.csprojAssemblyReference.cache

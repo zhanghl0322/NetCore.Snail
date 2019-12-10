@@ -11,7 +11,7 @@
 <#
   //你的当前model的命名空间
             string ModelNameSpace="Snail.Entity";
-			string copyright="蜗牛科技";
+			string copyright="一介布衣乄";
 			string version="V1.0";
 			string author="Allon";
 
@@ -62,7 +62,6 @@
                 //tt模板输出文件
                 manager.StartNewFile(MyDataTable.Rows[i]["name"].ToString() +".cs");
 #>
-using System;
 //-----------------------------------------------------------------------
 // * Copyright (C) <#= copyright  #>
 // * Version : <#= version #>
@@ -71,6 +70,7 @@ using System;
 // * History : Created by T4 <#= DateTime.Now #>
 // </copyright>
 //-----------------------------------------------------------------------
+using System;
 namespace <#=ModelNameSpace#>
 {
 	public class <#=MyDataTable.Rows[i]["name"].ToString()#>
@@ -140,7 +140,7 @@ namespace <#=ModelNameSpace#>
                         }
                     }
 #>
-       //[SugarColumn(ColumnName="<#=MyKeyTable.Rows[keyi]["keyname"].ToString()#>" <#=isKey#> )]
+      
        public  <#=keypropertyOutput#>  <#=MyKeyTable.Rows[keyi]["keyname"].ToString()#>  { get; set; }
 <#
                 }

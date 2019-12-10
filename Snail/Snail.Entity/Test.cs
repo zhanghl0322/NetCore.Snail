@@ -1,21 +1,21 @@
-using System;
 //-----------------------------------------------------------------------
-// * Copyright (C) 蜗牛科技
+// * Copyright (C) 一介布衣乄
 // * Version : V1.0
 // * Author  : Allon
 // * FileName: Test.cs
-// * History : Created by T4 12/09/2019 14:05:17
+// * History : Created by T4 12/09/2019 15:39:29
 // </copyright>
 //-----------------------------------------------------------------------
+using System;
 namespace Snail.Entity
 {
 	public class Test
     {
-       //[SugarColumn(ColumnName="Id" , IsPrimaryKey = true )]
+      
        public  Guid  Id  { get; set; }
-       //[SugarColumn(ColumnName="Name"  )]
+      
        public  string  Name  { get; set; }
-       //[SugarColumn(ColumnName="Amount"  )]
+      
        public  string  Amount  { get; set; }
     }
 }

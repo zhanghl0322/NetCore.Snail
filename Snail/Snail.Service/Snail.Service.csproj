@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Snail.Data\Snail.Data.csproj" />
     <ProjectReference Include="..\Snail.IService\Snail.IService.csproj" />
+    <ProjectReference Include="..\Snail.Model\Snail.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>

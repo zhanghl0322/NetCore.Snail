@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Snail.WebApi.Controllers
+namespace Snail.WebApi
 {
     [Route("api/[controller]")]
     [ApiController]
